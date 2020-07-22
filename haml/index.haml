@@ -215,28 +215,28 @@
                       %span.service-title #{service}
 
             .col-12.col-md-6.col-lg-7.col-xl-8
-              -# #contact
-              -#   %img.img-fluid.d-none.d-xl-block(src="img/side.jpg" alt="About #{companyName} - #{actionText}")/
-              -#   %form#contactForm(action="mailto:#{mailDirection}?subject=Form_Submition" method="post" enctype="text/plain")
-              -#     %h2.form-title #{formTitle}
+              #contact
+                %img.img-fluid.d-none.d-xl-block(src="img/side.jpg" alt="About #{companyName} - #{actionText}")/
+                %form#contactForm(action="https://formspree.io/dominguezjslop@gmail.com" method="post" enctype="text/plain")
+                  %h2.form-title #{formTitle}
 
-              -#     -@fields.each do |field|
-              -#       / #{field[:placeHolder]}
-              -#       .form-group
-              -#         -if field[:required] == true
-              -#           %input.form-control.input(type="text" name="#{field[:name]}" placeholder="#{field[:placeHolder]}" required)/
-              -#         -else 
-              -#           %input.form-control.input(type="text" name="#{field[:name]}" placeholder="#{field[:placeHolder]}")/
-              -#       / END OF #{field[:placeHolder]}
-              -#     -if addMessageField == true
-              -#       /Message
-              -#       .form-group
-              -#         %textarea.form-control.text-area(name="message" cols="80" rows="2" type="text" placeHolder="Message")
-              -#       /END OF Message
-              -#     / Submit Btn
-              -#     .btn-container.form-group
-              -#       %button.btn.btn-general(name="submit" type="submit" data-disable-with="<i class='fas fa-spinner fa-spin'></i>")#{formBTN}
-              -#     / END OF Submit Btn
+                  -@fields.each do |field|
+                    / #{field[:placeHolder]}
+                    .form-group
+                      -if field[:required] == true
+                        %input.form-control.input(type="text" name="#{field[:name]}" placeholder="#{field[:placeHolder]}" required)/
+                      -else 
+                        %input.form-control.input(type="text" name="#{field[:name]}" placeholder="#{field[:placeHolder]}")/
+                    / END OF #{field[:placeHolder]}
+                  -if addMessageField == true
+                    /Message
+                    .form-group
+                      %textarea.form-control.text-area(name="message" cols="80" rows="2" type="text" placeHolder="Message")
+                    /END OF Message
+                  / Submit Btn
+                  .btn-container.form-group
+                    %button.btn.btn-general(name="submit" type="submit" data-disable-with="<i class='fas fa-spinner fa-spin'></i>")#{formBTN}
+                  / END OF Submit Btn
       %section.testimonials#testimonials-section
         .overlay
         .container
