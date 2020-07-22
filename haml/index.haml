@@ -217,7 +217,7 @@
             .col-12.col-md-6.col-lg-7.col-xl-8
               #contact
                 %img.img-fluid.d-none.d-xl-block(src="img/side.jpg" alt="About #{companyName} - #{actionText}")/
-                %form#contactForm(action="https://formspree.io/dominguezjslop@gmail.com" method="post" enctype="text/plain")
+                %form#contactForm(action="https://formspree.io/dominguezjslop@gmail.com" method="post")
                   %h2.form-title #{formTitle}
 
                   -@fields.each do |field|
