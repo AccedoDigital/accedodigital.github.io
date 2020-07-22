@@ -42,22 +42,22 @@ a:hover, a:active, a:focus {
   color: #ffffff;
 }
 
-.ad-link {
+.adigital-link {
   font-family: "Josefin Sans", sans-serif;
   font-size: 1rem;
   font-weight: 400;
   color: #ffffff;
   opacity: 0.75;
 }
-.ad-link .accedo {
+.adigital-link .accedo {
   text-transform: lowercase;
   font-weight: 700;
 }
-.ad-link .digital {
+.adigital-link .digital {
   text-transform: uppercase;
   font-size: 0.75em;
 }
-.ad-link:hover, .ad-link:active, .ad-link:focus {
+.adigital-link:hover, .adigital-link:active, .adigital-link:focus {
   color: #ffffff;
   opacity: 1;
   text-decoration: none;
