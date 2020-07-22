@@ -1,0 +1,486 @@
+.wrap-content {
+    position: relative;
+    z-index: 1;
+}
+
+.banner {
+    position: relative;
+    height: 700px;
+    background-color: $primary-color;
+    background-image: url("../img/banner.jpg");
+    background-attachment: fixed;
+    background-size: cover;
+    background-position: center left 11%;
+
+    .tagline-container {
+        position: absolute;
+        top: 175px;
+        bottom: auto;
+        left: 0px;
+        right: 0px;
+
+        .tagline {
+            line-height: 1.2;
+            font-weight: 800;
+            margin-bottom: 70px;
+            font-size: 40px;
+            text-align: center;
+        }
+
+        .tagline-btn-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .btn-tagline {
+            font-size: 20px;
+            letter-spacing: letter-spacing(22px, 50);
+            text-transform: uppercase;
+            font-weight: 800;
+            // padding: 22px 30px;
+            padding: 10px 19px;
+            border: 3px solid $btn-color;
+
+            &+.btn-tagline {
+                margin-top: 40px;
+            }
+
+            @include on-event {
+                border-color: $hover-color;
+            }
+
+            &.transparent {
+                background: transparent;
+                color: $btn-color;
+
+                @include on-event {
+                    background: $hover-color;
+                    border-color: $hover-color;
+                    color: $white;
+                }
+            }
+        }
+    }
+
+    .scroll-link {
+        position: absolute;
+        bottom: 50px;
+        top: auto;
+        left: calc(50% - 15.5px);
+        right: auto;
+        animation: scroll 2s infinite;
+    }
+}
+
+#info-contact {
+    padding: 0px 0px;
+
+    .info-container {
+        .info-item {
+            padding: 50px 0px;
+            position: relative;
+
+            .info-icon {
+                display: block;
+                opacity: 0.1;
+            }
+
+            .info-description {
+                letter-spacing: 0px;
+                text-align: center;
+                font-weight: 900;
+                line-height: 1;
+
+                position: absolute;
+                top: 50%;
+                bottom: auto;
+                left: 0px;
+                right: 0px;
+                transform: translateY(-50%);
+
+                .info-title {
+                    display: block;
+                    text-transform: uppercase;
+                    // font-size: 20px;
+                    font-size: 16px;
+                    color: $primary-color;
+                    margin-bottom: 4px;
+                    line-height: 1;
+                }
+
+                .info-content {
+                    text-transform: lowercase;
+                    color: $text-color;
+                    // font-size: 40px;
+                    font-size: 6vw;
+                    line-height: 1;
+                    transition: all ease-out 0.3s;
+
+                    @include on-event {
+                        text-decoration: none;
+                        color: $secondary-color;
+                    }
+                }
+            }
+
+            &+.info-item {
+                &::before {
+                    content: '';
+                    display: block;
+                    width: 120px;
+                    height: 1px;
+                    background: #DADADA;
+                    position: absolute;
+                    top: 0px;
+                    bottom: auto;
+                    left: calc(50% - 60px);
+                    right: auto;
+                }
+            }
+        }
+
+    }
+}
+
+.contact-services {
+    padding: 90px 0px;
+    background: $grey;
+    line-height: 1;
+
+    .experience-title {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: stretch;
+        position: relative;
+        margin-bottom: 10px;
+
+        .quantity {
+            font-size: 83px;
+            line-height: 1;
+            font-weight: 900;
+            color: $primary-color;
+            padding-right: 10px;
+        }
+
+        .years {
+            font-size: 60px;
+            font-weight: 300;
+            line-height: 1;
+            letter-spacing: letter-spacing(-50, 60px);
+            color: $white;
+            display: block;
+            position: absolute;
+            top: 5px;
+            bottom: auto;
+            text-transform: uppercase;
+        }
+
+        .experience {
+            // font-size: 30px;
+            font-size: 27px;
+            line-height: 1;
+            font-weight: 900;
+            color: $text-color;
+            position: absolute;
+            bottom: 7px;
+            top: auto;
+            text-transform: uppercase;
+        }
+    }
+
+    .experience-content {
+        margin-bottom: 25px;
+        line-height: 30px;
+
+        #fundation-year::after{
+            content: '.';
+            display: inline;
+        }
+    }
+
+    .service-item {
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        padding: 10px 0px;
+        position: relative;
+
+        &+.service-item {
+            &::before {
+                content: '';
+                display: block;
+                width: 150px;
+                height: 1px;
+                background: #DADADA;
+                position: absolute;
+                top: 0px;
+                bottom: auto;
+                left: calc(50% - 75px);
+                right: auto;
+            }
+        }
+
+        .icon-container {
+            height: 60px;
+            width: 60px;
+            min-width: 60px;
+            border-radius: 100%;
+            background: $primary-color;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .service-title {
+            margin-left: 15px;
+            font-size: 18px;
+            line-height: 1.3;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+    }
+
+}
+
+.testimonials{
+    padding: 100px 0px 90px 0px;
+    background: url("../img/testimonial-bg.jpg");
+    background-size: cover;
+    background-position: center center;
+    position: relative;
+
+    .overlay{
+        position: absolute;
+        top: 0px;
+        bottom: 0px;
+        left: 0px;
+        right: 0px;
+        height: 100%;
+        width: 100%;
+        background: $testimonial-overlay;
+        opacity: 95%;
+    }
+
+
+    .testimonial-content{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        
+        img{
+            width: auto;
+            border-radius: 100%;
+        }
+
+        .name{
+            margin-top: 10px;
+            font-size: 20px;
+            text-transform: uppercase;
+            color: $white;
+            font-weight: 800;
+        }
+
+        .quote{
+            margin-top: 30px;
+            margin-bottom: 0px;
+            font-size: 20px;
+            color: $white;
+            font-weight: 300;
+            font-style: italic;
+            line-height: 1.5;
+            text-align: center;
+        }
+    }
+
+    .owl-nav{
+        display: none;
+    }
+
+    .owl-dots{
+        text-align: center;
+        margin-top: 60px;
+        .owl-dot{
+            padding: 10px 0px !important;
+            outline: none;
+            transition: all ease 0.3s;
+
+            span{
+                display: block;
+                width: 50px;
+                height: 4px;
+                background: $white;
+                opacity: 50%;
+                transition: all ease 0.3s;
+            }
+
+            &+.owl-dot{
+                margin-left: 10px;
+            }
+
+            &.active{
+                span{
+                    opacity: 100%;
+                }
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) {
+    .banner {
+        height: 100vh;
+        background-position: center left 11%;
+
+        .tagline-container {
+            position: absolute;
+            top: 290px;
+
+            .tagline {
+                margin-bottom: 40px;
+                font-size: 80px;
+                text-align: left;
+            }
+
+            .tagline-btn-container {
+                flex-direction: row;
+            }
+
+            .btn-tagline {
+                font-size: 22px;
+                padding: 16px 24px;
+
+                &+.btn-tagline {
+                    margin-top: 0px;
+                    margin-left: 30px;
+                }
+            }
+        }
+    }
+
+    #info-contact {
+        padding: 40px 0px;
+
+        .info-container {
+
+            .info-item {
+                padding: 50px 0px;
+                flex: 1;
+
+                .info-description {
+
+                    .info-title {
+                        font-size: 20px;
+                        margin-bottom: 10px;
+                    }
+
+                    .info-content {
+                        font-size: 40px;
+                    }
+                }
+            }
+
+        }
+    }
+
+    .contact-services {
+
+        .row{
+            align-items: center;
+        }
+
+        .experience-title {
+
+            .years {
+                // font-size: 60px;
+                font-size: 56px;
+
+            }
+
+            .experience {
+                // font-size: 30px;
+                font-size: 24px;
+            }
+        }
+
+    }
+
+    .testimonials{
+        padding: 150px 0px 140px 0px;
+    
+        .testimonial-content{
+
+            .name{
+                margin-top: 15px;
+            }
+    
+            .quote{
+                margin-top: 40px;
+            }
+        }
+    
+        .owl-dots{
+            margin-top: 100px;
+
+        }
+    }
+}
+
+@media (min-width: 992px) {
+    #info-contact {
+        padding: 50px 0px;
+
+        .info-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+
+            .info-item {
+                padding: 30px;
+                flex: 1;
+
+                .info-description {
+
+                    .info-content {
+                        font-size: 25px;
+                    }
+                }
+
+                &+.info-item {
+                    &::before {
+                        width: 1px;
+                        height: 120px;
+                        top: calc(50% - 60px);
+                        bottom: auto;
+                        left: 1px;
+                        right: auto;
+                    }
+                }
+            }
+
+        }
+    }
+
+    .contact-services {
+
+        .experience-title {
+
+            .years {
+                font-size: 60px;
+            }
+
+            .experience {
+                font-size: 30px;
+            }
+        }
+
+    }
+
+}
+

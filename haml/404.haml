@@ -1,0 +1,78 @@
+!!! 5
+%html{:lang => "en"}
+  %head
+
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    / Required meta tags
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "width=device-width, initial-scale=1, shrink-to-fit=no", :name => "viewport"}/
+
+    %title Page not found
+    %meta{:name => "description", :content => "Oooops!! That page doesn't exist or is unavailable."}
+    %link{:rel => "icon", :href => "img/favicon.png"}/
+
+    / Bootstrap CSS
+    %link{:crossorigin => "anonymous", :href => "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css", :integrity => "sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh", :rel => "stylesheet"}/
+
+    / Basic CSS by Accedo Digital
+    %link{:href => "css/main.css", :rel => "stylesheet"}/
+    
+    / HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
+    / WARNING: Respond.js doesn't work if you view the page via file://
+    /[if lt IE 9]
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+  
+  %body
+    .wrap-404.text-center
+      .main-404
+        .container
+          .row
+            .col-12.col-lg-10.offset-lg-1.col-xl-8.offset-xl-2
+              %h1 404
+              %h2 File not found
+              %p.main-text Oooops!! That page doesn't exist or is unavailable.
+              %p.main-text 
+                This website was designed and developed by Accedo Digital.
+                %a(href="https://www.accedodigital.com/contact-us/" target="_blank" title="Contact Accedo Digital")
+                  Contact Us
+                if you would like that we build an amazing website for your company.
+
+      .nav-404
+        .container
+          .row
+            .col-12
+              %p.links-container
+                %a(href="https://www.accedodigital.com/" target="_blank" title="Accedo Digital, Inc.")
+                  Accedo Digital, Inc.
+                %span  — 
+                %a(href="https://www.facebook.com/accedodigital" target="_blank" title="Facebook")
+                  Facebook
+                %span —
+                %a(href="https://www.linkedin.com/company/accedo-digital/" target="_blank" title="LinkedIn")
+                  LinkedIn
+                %span —
+                %a(href="https://www.instagram.com/accedodigital/" target="_blank" title="Instagram")
+                  Instagram
+          .row
+            .col-12
+              %br/
+              %a(href="/" title="← Back to Home")
+                ← Back to Home
+          
+          .row
+            .col-12
+              %p.text-center.logo-container
+                %a.ad-link(href="https://www.accedodigital.com/" target="_blank" title="Accedo Digital, Inc.")
+                  %img(src="img/ad-logo.png" alt="Accedo Digital, Inc.")/
+
+
+
+
+
+    / jQuery first, then Popper.js, then Bootstrap JS
+    %script{:crossorigin => "anonymous", :integrity => "sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=", :src => "https://code.jquery.com/jquery-3.4.1.min.js"}
+    %script{:crossorigin => "anonymous", :integrity => "sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo", :src => "https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"}
+    %script{:crossorigin => "anonymous", :integrity => "sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6", :src => "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"}
+    / FontAwesome 
+    %script{:src => "https://kit.fontawesome.com/167731d55a.js"}

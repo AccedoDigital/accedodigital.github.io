@@ -1,0 +1,334 @@
+-# ***** DECLARE VARIABLES *****
+
+-# COMPANY INFO
+- companyName = 'Company Name'
+- businessTurn = 'Keywords about Business Turn'
+- description  = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.'
+- phoneNumber = '+1 (123) 456-7890'
+- phoneNumberFormated = '+11234567890'
+- mailDirection = 'info@company.com'
+- schedule = '9:00 am - 6:00 pm'
+-# - yearsExperience = '15'
+- @areas = ['Area1', 'Area2']
+- yearFundation = '2020'
+
+- @services = ['Service 1', 'Service 2', 'Service 3', 'Service 4']
+
+-# SOCIAL MEDIA LINKS
+-# Facebook
+- addFacebook = false
+- facebookLink = '#'
+-# Twitter
+- addTwitter = false
+- twitterLink = '#'
+-# Instagram
+- addInstagram = false
+- instagramLink = '#'
+-# Linkedin
+- addLinkedin = false
+- linkedinLink = '#'
+-# Yelp
+- addYelp = false
+- yelpLink = '#'
+
+-# SITE CONTENT 
+- actionText = 'Call to Action'
+- actionUrl = '#action'
+- tagline = 'Your Tagline,<br/>Here'
+
+-# Form Fields
+- formTitle = '<span class="small-text">Request a</span><span class="big-text">Free Quote</span>'
+
+- @fields = [{:name => "name", :placeHolder => "Full Name", :required => true}, {:name => "email", :placeHolder => "Email Address", :required => true}, {:name => "phone", :placeHolder => "Phone Number", :required => true}, {:name => "address", :placeHolder => "Address", :required => true}]
+-# Message field [If you will enable this option we recommend to add a taller image]
+- addMessageField = false
+
+- formBTN = actionText
+
+-# Testimonials
+- @testimonials = [{:name => "Halew Brown", :quote => "I would recommend #{companyName}. Reliable team, sticker to the estimate that was very detailed and clear, fair prices and amazing results, was on point with every little detail. Finish the job in a timely manner."}, {:name => "John Doe", :quote => "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua."}]
+
+!!! 5
+%html{:lang => "en"}
+  %head
+
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    / Required meta tags
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "width=device-width, initial-scale=1, shrink-to-fit=no", :name => "viewport"}/
+
+    %title #{companyName} - #{businessTurn}
+    %meta{:name => "description", :content => "#{description}"}
+    %link{:rel => "icon", :href => "img/favicon.png"}/
+
+    / Bootstrap CSS
+    %link{:crossorigin => "anonymous", :href => "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css", :integrity => "sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh", :rel => "stylesheet"}/
+    
+    / Owl Carousel
+    %link(rel="stylesheet" href="css/owl.carousel.min.css")/
+
+    / Basic CSS by Accedo Digital
+    %link{:href => "css/main.css", :rel => "stylesheet"}/
+    
+    / HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries
+    / WARNING: Respond.js doesn't work if you view the page via file://
+    /[if lt IE 9]
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.min.js"></script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/respond.js/1.4.2/respond.min.js"></script>
+
+  %body
+    %header#back-top
+      .container.header-container
+
+        %nav.navbar.navbar-expand-md
+          /Logo
+          %a(title="#{companyName}" href="/")
+            %img.navbar-brand(src="img/logo.png" alt="#{companyName} Logo")/
+          /END OF Logo
+
+          /Social Media Desktop
+          .desktop-social.d-none.d-md-flex
+            - if addFacebook == true
+              %a.social-link(href="#{facebookLink}" title="Facebook" target="_blank")
+                %i.fab.fa-facebook-f
+            - if addTwitter == true
+              %a.social-link(href="#{twitterLink}" title="Twitter" target="_blank")
+                %i.fab.fa-twitter
+            - if addInstagram == true
+              %a.social-link(href="#{instagramLink}" title="Instagram" target="_blank")
+                %i.fab.fa-instagram
+            - if addLinkedin == true
+              %a.social-link(href="#{linkedinLink}" title="LinkedIn" target="_blank")
+                %i.fab.fa-linkedin-in
+            - if addYelp == true
+              %a.social-link(href="#{yelpLink}" title="Yelp" target="_blank")
+                %i.fab.fa-yelp
+          /END OF Social Media Desktop
+
+          /Phone Number
+          %a.phone-number.d-none.d-md-flex(title="#{phoneNumber}" href="tel:#{phoneNumberFormated}")#{phoneNumber}
+          /END OF Phone Number
+
+          /Hamburguer
+          %button.navbar-toggler.collapsed( type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation")
+            %span.sr-only Menu
+            %span.icon-bar.top
+            %span.icon-bar.middle
+            %span.icon-bar.bottom
+          /END OF Hamburguer
+          
+          /Navbar Content
+          .collapse.navbar-collapse#navbarContent
+            %ul.navbar-nav.mr-auto
+              %li.nav-item.active
+                %a.nav-link(href="/" title="Home")Home
+              %li.nav-item
+                %a.nav-link(href="#contact" title="Contact Us")Contact Us
+              %li.nav-item
+                %a.nav-link(href="#services" title="Services")Services
+              %li.nav-item
+                %a.nav-link(href="#testimonials-section" title="Testimonials")Testimonials
+              /Navigation btn
+              %li.action-item
+                %a.btn-general.btn-action.local-scroll(href="#{actionUrl}" title="#{actionText}")
+                  %img(src="img/action-icon.png" alt="#{actionText} Icon")/
+                  %span #{actionText}
+              /END OF Navigation btn
+              /Social media mobile
+              %li.mobile-social.d-md-none
+                - if addFacebook == true
+                  %a.social-link(href="#{facebookLink}" title="Facebook")
+                    %i.fab.fa-facebook-f
+                - if addTwitter == true
+                  %a.social-link(href="#{twitterLink}" title="Twitter")
+                    %i.fab.fa-twitter
+                - if addInstagram == true
+                  %a.social-link(href="#{instagramLink}" title="Instagram")
+                    %i.fab.fa-instagram
+                - if addLinkedin == true
+                  %a.social-link(href="#{linkedinLink}" title="LinkedIn")
+                    %i.fab.fa-linkedin-in
+                - if addYelp == true
+                  %a.social-link(href="#{yelpLink}" title="Yelp")
+                    %i.fab.fa-yelp
+              /END OF Social media mobile
+          /END OF Navbar Content
+
+    .wrap-content
+      .banner
+        .tagline-container
+          .container
+            .row
+              .col-12
+                %h1.tagline #{tagline}
+              .col-12
+                .tagline-btn-container
+                  %a.btn-general.btn-tagline.transparent.local-scroll(href="#info-contact" title="More Info")More Info
+                  %a.btn-general.btn-tagline(href="#{actionUrl}" title="#{actionText}")#{actionText}
+        %a.scroll-link.local-scroll.d-none.d-md-flex(href="#info-contact" title="Scroll Down")
+          %img(src="img/mouse.png" alt="Scroll Down")/  
+      
+      %section#info-contact
+        .container-fluid
+          .row
+            .col-12
+              .info-container
+                .info-item
+                  %img.info-icon.img-fluid(src="img/info-icon-phone.png" alt="Phone Icon")/
+                  .info-description
+                    %span.info-title Call Us Now
+                    %a.info-content(href="tel:#{phoneNumberFormated}" title="Call to #{phoneNumber}")#{phoneNumber}
+                .info-item
+                  %img.info-icon.img-fluid(src="img/info-icon-mail.png" alt="Email Icon")/
+                  .info-description
+                    %span.info-title Email adress
+                    %a.info-content(href="mailto:#{mailDirection}" title="Mail to #{mailDirection}")#{mailDirection}
+                .info-item
+                  %img.info-icon.img-fluid(src="img/info-icon-clock.png" alt="Clock Icon")/
+                  .info-description
+                    %span.info-title Working Hours
+                    %span.info-content #{schedule}
+
+      %section.contact-services
+        .container
+          .row
+            .col-12.col-md-6.col-lg-5.col-xl-4
+              #services
+                %h2.experience-title
+                  %span.quantity(data-fundation= "#{yearFundation}")
+                  .years-text
+                    %span.years Years
+                    %span.experience Experience
+                %p.experience-content
+                  We have been serving in the area of
+                  -@areas.each do |area|
+                    -if area == @areas.last 
+                      and #{area}
+                    - else
+                      #{area},
+                  since #{yearFundation}. Among the services we offer are the following:
+                .services-container
+                  -@services.each_with_index do |service, index|
+                    .service-item
+                      .icon-container
+                        %img(src="img/service-icon-#{index}.png" alt="#{service}" class="img-fluid")/
+                      %span.service-title #{service}
+
+            .col-12.col-md-6.col-lg-7.col-xl-8
+              #contact
+                %img.img-fluid.d-none.d-xl-block(src="img/side.png" alt="About #{companyName} - #{actionText}")/
+                %form#contactForm(action="mailto:#{mailDirection}?subject=Form_Submition" method="post" enctype="text/plain")
+                  %h2.form-title #{formTitle}
+
+                  -@fields.each do |field|
+                    / #{field[:placeHolder]}
+                    .form-group
+                      -if field[:required] == true
+                        %input.form-control.input(type="text" name="#{field[:name]}" placeholder="#{field[:placeHolder]}" required)/
+                      -else 
+                        %input.form-control.input(type="text" name="#{field[:name]}" placeholder="#{field[:placeHolder]}")/
+                    / END OF #{field[:placeHolder]}
+                  -if addMessageField == true
+                    /Message
+                    .form-group
+                      %textarea.form-control.text-area(name="message" cols="80" rows="2" type="text" placeHolder="Message")
+                    /END OF Message
+                  / Submit Btn
+                  .btn-container.form-group
+                    %button.btn.btn-general(name="submit" type="submit" data-disable-with="<i class='fas fa-spinner fa-spin'></i>")#{formBTN}
+                  / END OF Submit Btn
+      %section.testimonials#testimonials-section
+        .overlay
+        .container
+          .row
+            .col-12.col-lg-10.offset-lg-1.col-xl-8.offset-xl-2
+              .owl-carousel#testimonials
+                -@testimonials.each_with_index do |testimonial, index|
+                  / #{testimonial[:name]}
+                  .item
+                    .testimonial-content
+                      %img.img-fluid(src="img/testimonial-picture-#{index}.png" alt="#{testimonial[:name]}")/
+                      %span.name #{testimonial[:name]}
+                      %p.quote "#{testimonial[:quote]}"
+
+    %footer
+      .footer-top
+        .container
+          .row
+            .col-12.col-md-3
+              %p.link-container
+                %a.logo-container(href="/" title="#{companyName}")
+                  %img.img-fluid(src="img/logo-footer.png" alt="#{companyName} Logo")/
+            .col-12.col-md-9
+              .navigation
+                %ul.footer-nav
+                  %li
+                    %a.nav-link(href="/" title="Home")Home
+                  %li
+                    %a.nav-link(href="#contact" title="Contact Us")Contact Us
+                  %li
+                    %a.nav-link(href="#services" title="Services")Services
+                  %li
+                    %a.nav-link(href="#testimonials-section" title="Testimonials")Testimonials
+      .footer-middle
+        .container
+          .row
+            .col-12
+              .footer-social
+                %ul.social-list
+                  - if addFacebook == true
+                    %li
+                      %a.social-link(href="#{facebookLink}" title="Facebook" target="_blank")
+                        %i.fab.fa-facebook-f
+                  - if addTwitter == true
+                    %li
+                      %a.social-link(href="#{twitterLink}" title="Twitter" target="_blank")
+                        %i.fab.fa-twitter
+                  - if addInstagram == true
+                    %li
+                      %a.social-link(href="#{instagramLink}" title="Instagram" target="_blank")
+                        %i.fab.fa-instagram
+                  - if addLinkedin == true
+                    %li
+                      %a.social-link(href="#{linkedinLink}" title="LinkedIn" target="_blank")
+                        %i.fab.fa-linkedin-in
+                  - if addYelp == true
+                    %li
+                      %a.social-link(href="#{yelpLink}" title="Yelp" target="_blank")
+                        %i.fab.fa-yelp
+      .footer-bottom
+        .container
+          .row
+            .col-12
+              %p.copy-text.text-center.text-white
+                ©Copyright
+                %span.current-year
+                #{companyName }.
+              %p.copy-text.text-center.text-white
+                Designed and Developed by 
+                %a.ad-link.no-break(href="https://www.accedodigital.com/" target="_blank" title="Accedo Digital")
+                  %span.accedo Accedo
+                  %span.divider|
+                  %span.digital Digital
+
+    / Optional JavaScript
+    / jQuery first, then Popper.js, then Bootstrap JS
+    %script{:crossorigin => "anonymous", :integrity => "sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=", :src => "https://code.jquery.com/jquery-3.4.1.min.js"}
+    %script{:crossorigin => "anonymous", :integrity => "sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo", :src => "https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"}
+    %script{:crossorigin => "anonymous", :integrity => "sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6", :src => "https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"}
+
+    / FontAwesome 
+    %script{:src => "https://kit.fontawesome.com/167731d55a.js"}
+
+    / header funtionality
+    %script{:src => "js/header.js"}
+
+    /tools.js
+    %script{:src => "js/tools.js"}
+
+    /Owl Carousel
+    %script{:src => "js/owl.carousel.min.js"}
+
+    /Main
+    %script{:src => "js/main.js"}
+    
