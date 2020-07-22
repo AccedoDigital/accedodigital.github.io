@@ -9,8 +9,7 @@ $secondary-font: 'Josefin Sans', sans-serif;
 // fontSize
 $body-font-size: 16px;
 
-/// Copy text
-$text-color: #616161 !default;
+
 
 // Default colors
 $white: #ffffff;
@@ -18,16 +17,20 @@ $black: #000000;
 $grey: #F5F5F5;
 
 // Brand color pallete
-$primary-color: #0793CF;
-$secondary-color: #E51E27;
+$primary-color: #00F4BF;
+$secondary-color: #141C39;
+
+/// Copy text
+$text-color: $secondary-color !default;
 
 // Elemnts colors
+$tagline-color: $primary-color;
 $btn-color: $secondary-color;
 $hover-color: $primary-color;
 $body-color: $white;
 
 $navigation-background: $primary-color;
-$testimonial-overlay: $primary-color;
+$testimonial-overlay: $secondary-color;
 
 $footer-background: $text-color;
 $footer-text-color: $white;

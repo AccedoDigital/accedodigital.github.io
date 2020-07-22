@@ -1,47 +1,47 @@
 -# ***** DECLARE VARIABLES *****
 
 -# COMPANY INFO
-- companyName = 'Company Name'
+- companyName = 'Accedo Digital'
 - businessTurn = 'Keywords about Business Turn'
 - description  = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam.'
-- phoneNumber = '+1 (123) 456-7890'
-- phoneNumberFormated = '+11234567890'
-- mailDirection = 'info@company.com'
-- schedule = '9:00 am - 6:00 pm'
+- phoneNumber = '+1-305-760-9553'
+- phoneNumberFormated = '+13057609553'
+- mailDirection = 'sales@accedodigital.com'
+- schedule = '8:00 am - 5:00 pm'
 -# - yearsExperience = '15'
-- @areas = ['Area1', 'Area2']
-- yearFundation = '2020'
+- @areas = ['Miami', 'USA', 'Central America']
+- yearFundation = '2018'
 
-- @services = ['Service 1', 'Service 2', 'Service 3', 'Service 4']
+- @services = ['Web Development', 'Social Media Paid Ads', 'Paid Search', 'Graphic Design']
 
 -# SOCIAL MEDIA LINKS
 -# Facebook
-- addFacebook = false
-- facebookLink = '#'
+- addFacebook = true
+- facebookLink = 'https://www.facebook.com/accedodigital'
 -# Twitter
 - addTwitter = false
 - twitterLink = '#'
 -# Instagram
-- addInstagram = false
-- instagramLink = '#'
+- addInstagram = true
+- instagramLink = 'https://www.instagram.com/accedodigital/'
 -# Linkedin
-- addLinkedin = false
-- linkedinLink = '#'
+- addLinkedin = true
+- linkedinLink = 'https://www.linkedin.com/company/accedo-digital/'
 -# Yelp
 - addYelp = false
 - yelpLink = '#'
 
 -# SITE CONTENT 
-- actionText = 'Call to Action'
-- actionUrl = '#action'
-- tagline = 'Your Tagline,<br/>Here'
+- actionText = 'Contact Us'
+- actionUrl = '#contact'
+- tagline = 'Do you want<br/>more customers?<br/>WE CAN HELP!'
 
 -# Form Fields
 - formTitle = '<span class="small-text">Request a</span><span class="big-text">Free Quote</span>'
 
-- @fields = [{:name => "name", :placeHolder => "Full Name", :required => true}, {:name => "email", :placeHolder => "Email Address", :required => true}, {:name => "phone", :placeHolder => "Phone Number", :required => true}, {:name => "address", :placeHolder => "Address", :required => true}]
+- @fields = [{:name => "name", :placeHolder => "Full Name", :required => true}, {:name => "email", :placeHolder => "Email Address", :required => true}, {:name => "phone", :placeHolder => "Phone Number", :required => true}]
 -# Message field [If you will enable this option we recommend to add a taller image]
-- addMessageField = false
+- addMessageField = true
 
 - formBTN = actionText
 
@@ -164,7 +164,7 @@
               .col-12
                 .tagline-btn-container
                   %a.btn-general.btn-tagline.transparent.local-scroll(href="#info-contact" title="More Info")More Info
-                  %a.btn-general.btn-tagline(href="#{actionUrl}" title="#{actionText}")#{actionText}
+                  %a.btn-general.btn-tagline.local-scroll(href="#{actionUrl}" title="#{actionText}")#{actionText}
         %a.scroll-link.local-scroll.d-none.d-md-flex(href="#info-contact" title="Scroll Down")
           %img(src="img/mouse.png" alt="Scroll Down")/  
       
@@ -216,7 +216,7 @@
 
             .col-12.col-md-6.col-lg-7.col-xl-8
               #contact
-                %img.img-fluid.d-none.d-xl-block(src="img/side.png" alt="About #{companyName} - #{actionText}")/
+                %img.img-fluid.d-none.d-xl-block(src="img/side.jpg" alt="About #{companyName} - #{actionText}")/
                 %form#contactForm(action="mailto:#{mailDirection}?subject=Form_Submition" method="post" enctype="text/plain")
                   %h2.form-title #{formTitle}
 
